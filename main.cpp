@@ -73,15 +73,15 @@ void drawDragonHead() {
 
         //Right Ear
         glVertex2f(0.05, 0.7);
-        glVertex2f(0.1, 0.85);
+        glVertex2f(0.1, 0.75);
 
-        glVertex2f(0.1, 0.85);
+        glVertex2f(0.1, 0.75);
         glVertex2f(0.07, 0.9);
 
         glVertex2f(0.07, 0.9);
-        glVertex2f(0.07, 0.85);
+        glVertex2f(0.08, 0.77);
 
-        glVertex2f(0.07, 0.85);
+        glVertex2f(0.08, 0.77);
         glVertex2f(0.04, 0.7);
 
         glVertex2f(0.04, 0.7);
@@ -89,15 +89,15 @@ void drawDragonHead() {
 
         //Left Ear
         glVertex2f(0.01, 0.7);
-        glVertex2f(0.03, 0.8);
+        glVertex2f(0.04, 0.75);
 
-        glVertex2f(0.03, 0.8);
+        glVertex2f(0.04, 0.75);
         glVertex2f(0.02, 0.9);
 
         glVertex2f(0.02, 0.9);
-        glVertex2f(0.01, 0.75);
+        glVertex2f(0.018, 0.75);
 
-        glVertex2f(0.01, 0.75);
+        glVertex2f(0.018, 0.75);
         glVertex2f(0, 0.7);
     glEnd();
 
