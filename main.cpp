@@ -111,10 +111,77 @@ void drawDragonHead() {
     glEnd();
 }
 
+void drawRightWing() {
+    /*glBegin(GL_LINE_STRIP);
+    circle(-0.18,0.65,0.28, 140, 270);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    circle(-0.39,0.055,0.78, 90, 180);
+    glEnd();*/
+
+    glBegin(GL_LINE_STRIP);
+    circle(0.82,0.65,0.28, 140, 270);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    circle(0.61,0.055,0.78, 90, 180);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    circle(-0.07,0.055,0.1, 40, 180);
+    glEnd();
+
+    glBegin(GL_LINES);
+        glColor3f(1.0, 1.0, 1.0);
+        glVertex2f(0.008, 0.12);
+        glVertex2f(0.1, -0.2);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    circle(0.2,-0.2,0.1, 40, 180);
+    glEnd();
+
+    glBegin(GL_LINES);
+        glColor3f(1.0, 1.0, 1.0);
+        glVertex2f(0.28, -0.135);
+        glVertex2f(0.5, -0.4);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    circle(1.3,0.2,1, 190, 215);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    circle(0.34,-0.176,0.2, 30, 100);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    circle(0.618,-0.074,0.1, 20, 180);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    circle(0.766,-0.070,0.058, 0, 160);
+    glEnd();
+}
+
+void drawLeftWing() {
+    glBegin(GL_LINE_STRIP);
+    circle(0.18,0.65,0.28, -90, 40);
+    glEnd();
+
+    glBegin(GL_LINE_STRIP);
+    circle(0.39,0.055,0.78, 0, 90);
+    glEnd();
+
+}
+
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
-    drawDragonHead();
-    drawDragonTail();
+    //drawDragonHead();
+    //drawDragonTail();
+    drawRightWing();
+    //drawLeftWing();
     glutSwapBuffers();
 }
 
