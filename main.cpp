@@ -120,93 +120,93 @@ void drawRightWing() {
     glEnd();*/
 
     glBegin(GL_LINE_STRIP);
-    circle(-0.18,0.65,0.28, 140, 270);
+    circle(-0.06,0.65,0.28, 140, 245);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(-0.39,0.055,0.78, 90, 180);
+    circle(-0.22,0.055,0.78, 93, 178);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(-1.07,0.055,0.1, 40, 180);
+    circle(-0.95,0.055,0.1, 40, 180);
     glEnd();
 
     glBegin(GL_LINES);
         glColor3f(1.0, 1.0, 1.0);
-        glVertex2f(-0.992, 0.12);
-        glVertex2f(-0.9, -0.2);
+        glVertex2f(-0.872, 0.12);
+        glVertex2f(-0.78, -0.2);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(-0.8,-0.2,0.1, 40, 180);
+    circle(-0.68,-0.2,0.1, 40, 180);
     glEnd();
 
     glBegin(GL_LINES);
         glColor3f(1.0, 1.0, 1.0);
-        glVertex2f(-0.72, -0.135);
-        glVertex2f(-0.5, -0.4);
+        glVertex2f(-0.60, -0.135);
+        glVertex2f(-0.38, -0.4);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(0.3,0.2,1, 190, 215);
+    circle(0.42,0.2,1, 190, 215);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(-0.66,-0.176,0.2, 30, 100);
+    circle(-0.54,-0.176,0.2, 30, 100);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(-0.382,-0.074,0.1, 20, 180);
+    circle(-0.262,-0.074,0.1, 20, 180);
     glEnd();
 
-    glBegin(GL_LINE_STRIP);
+    /*glBegin(GL_LINE_STRIP);
     circle(-0.234,-0.070,0.058, 0, 160);
-    glEnd();
+    glEnd();*/
 }
 
 void drawLeftWing() {
     glBegin(GL_LINE_STRIP);
-    circle(0.06,0.65,0.28, -90, 42);
+    circle(0.0,0.65,0.28, -90, 42);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(0.27,0.055,0.78, 0, 91);
+    circle(0.20,0.055,0.78, 0, 91);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(0.95,0.055,0.1, 0, 140);
+    circle(0.89,0.055,0.1, 20, 140);
     glEnd();
 
     glBegin(GL_LINES);
         glColor3f(1.0, 1.0, 1.0);
-        glVertex2f(0.872, 0.12);
-        glVertex2f(0.78, -0.2);
+        glVertex2f(0.812, 0.12);
+        glVertex2f(0.72, -0.2);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(0.68,-0.2,0.1, 0, 140);
+    circle(0.62,-0.2,0.1, 0, 140);
     glEnd();
 
     glBegin(GL_LINES);
         glColor3f(1.0, 1.0, 1.0);
-        glVertex2f(0.6, -0.135);
-        glVertex2f(0.38, -0.4);
+        glVertex2f(0.54, -0.135);
+        glVertex2f(0.32, -0.4);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(-0.42,0.2,1, 325, 351);
+    circle(-0.48,0.2,1, 325, 351);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(0.54,-0.176,0.2, 80, 150);
+    circle(0.48,-0.176,0.2, 80, 150);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(0.262,-0.074,0.1, 0, 161);
+    circle(0.202,-0.074,0.1, 0, 161);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
-    circle(0.114,-0.070,0.058, 20, 180);
+    circle(0.054,-0.070,0.058, 20, 160);
     glEnd();
 }
 
