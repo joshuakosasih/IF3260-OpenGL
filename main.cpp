@@ -48,7 +48,6 @@ void drawDragonTail() {
     glBegin(GL_LINES);
         glVertex2f(0.11, -0.7);
         glVertex2f(0.05, -0.22);
-
     glEnd();
 }
 
@@ -221,7 +220,7 @@ void display() {
 }
 
 void reshape(int w, int h) {
-    glViewport(0, 0, w, h);
+    glViewport(150, 0, w/(1.5), h);
 }
 
 void initOpenGL() {
@@ -234,7 +233,7 @@ int main(int argc, char **argv) {
     //start up freeglut
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-    glutInitWindowSize(600, 600);
+    glutInitWindowSize(900, 600);
     glutInitWindowPosition(200, 50);
     glutCreateWindow("Second OpenGL App");
 
