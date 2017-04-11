@@ -21,6 +21,37 @@ void circle(float x, float y, float r, int anglestart, int anglestop) {
     }
 }
 
+void InverseCircle(float x, float y, float r, int anglestart, int anglestop) {
+    for (int i = anglestart-1;i >= anglestop ;i--) {
+        float degInRad = i*3.14159/180;
+        glColor3f(1, 1, 1);
+        glVertex2f(cos(degInRad)*r + x, sin(degInRad)*r + y);
+    }
+}
+
+void drawDragonTail() {
+    glLineWidth(2.5);
+    glBegin(GL_LINES);
+        glColor3f(1.0, 1.0, 1.0);
+        glVertex2f(-0.18, -0.22);
+        glVertex2f(0, -0.7);
+    glEnd();
+    glBegin(GL_LINE_STRIP);
+        circle(-0.18, -0.7, 0.18, 90, 360);
+    glEnd();
+    glBegin(GL_LINE_STRIP);
+        circle(-0.14, -0.7, 0.25, 180, 360);
+    glEnd();
+    glBegin(GL_LINE_STRIP);
+        circle(-0.19, -0.71, 0.2, 90, 180);
+    glEnd();
+    glBegin(GL_LINES);
+        glVertex2f(0.11, -0.7);
+        glVertex2f(0.05, -0.22);
+
+    glEnd();
+}
+
 void drawDragonHead() {
     glLineWidth(2.5);
     glBegin(GL_LINES);
@@ -83,6 +114,7 @@ void drawDragonHead() {
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
     drawDragonHead();
+    drawDragonTail();
     glutSwapBuffers();
 }
 
