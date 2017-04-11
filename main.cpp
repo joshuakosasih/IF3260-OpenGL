@@ -14,82 +14,75 @@
 float counter = 0.0;
 
 void circle(float x, float y, float r, int anglestart, int anglestop) {
-    for (int i = anglestart;i < anglestop;i++) {
+    for (int i = anglestart;i < anglestop ;i++) {
         float degInRad = i*3.14159/180;
-        glColor3f(0.2, 1, 0.2);
+        glColor3f(1, 1, 1);
         glVertex2f(cos(degInRad)*r + x, sin(degInRad)*r + y);
     }
 }
 
-void display() {
-    glClear(GL_COLOR_BUFFER_BIT);
-
-    counter += 0.1;
-
-    if(counter > 180) {
-        counter = -180;
-    }
-
-    // line
-    glLoadIdentity();
-
-    glRotatef(counter, 0.0, 1.0, 0.0); //movement
-
+void drawDragonHead() {
     glLineWidth(2.5);
     glBegin(GL_LINES);
-
         glColor3f(1.0, 1.0, 1.0);
-        glVertex2f(0.5, 0.8);
-        glVertex2f(-0.5, -0.8);
+        glVertex2f(0.2, 0.5);
+        glVertex2f(0.15, 0.47);
+
+        glVertex2f(0.15, 0.47);
+        glVertex2f(0.05, 0.55);
+
+        glVertex2f(0.05, 0.55);
+        glVertex2f(0.05, 0.57);
+
+        glVertex2f(0.2, 0.5);
+        glVertex2f(0.1, 0.7);
+
+        glVertex2f(0.1, 0.7);
+        glVertex2f(0.05, 0.7);
+
+        //Right Ear
+        glVertex2f(0.05, 0.7);
+        glVertex2f(0.1, 0.85);
+
+        glVertex2f(0.1, 0.85);
+        glVertex2f(0.07, 0.9);
+
+        glVertex2f(0.07, 0.9);
+        glVertex2f(0.07, 0.85);
+
+        glVertex2f(0.07, 0.85);
+        glVertex2f(0.04, 0.7);
+
+        glVertex2f(0.04, 0.7);
+        glVertex2f(0.01, 0.7);
+
+        //Left Ear
+        glVertex2f(0.01, 0.7);
+        glVertex2f(0.03, 0.8);
+
+        glVertex2f(0.03, 0.8);
+        glVertex2f(0.02, 0.9);
+
+        glVertex2f(0.02, 0.9);
+        glVertex2f(0.01, 0.75);
+
+        glVertex2f(0.01, 0.75);
+        glVertex2f(0, 0.7);
     glEnd();
 
-    // square
-    glLoadIdentity();
-
-    glTranslatef(-counter/100, 0.0, 0.0); //movement
-
-    glBegin(GL_POLYGON);
-        glColor3f(1.0, 0.0, 0.0);
-        glVertex2f(0.0, 0.0);
-        glColor3f(0.5, 0.0, 0.5);
-        glVertex2f(0.5, 0.0);
-        glColor3f(0.0, 0.0, 1.0);
-        glVertex2f(0.5, 0.5);
-        glColor3f(1.0, 1.0, 1.0);
-        glVertex2f(0.0, 0.5);
+    //Outer neck
+    glBegin(GL_LINE_STRIP);
+    circle(0.05, 0.455, 0.25, 90, 200);
     glEnd();
 
-    //octagon
-    glLoadIdentity();
-
-    glTranslatef(counter/100, counter/200, 0.0); //movement
-
-    glColor3f(0.0, 0.1, 0.5);
-    glBegin(GL_POLYGON);
-        for (int i = 0;i < 8;i++) {
-            float degInRad = i*6.2832/8;
-            glColor3f(cos(degInRad)*50, sin(degInRad)*50, 1.0);
-            glVertex2f(cos(degInRad)*0.3, sin(degInRad)*0.3);
-        }
+    glBegin(GL_LINE_STRIP);
+    circle(0.02, 0.47, 0.1, 70, 250);
     glEnd();
+}
 
-    // circle
-    glLoadIdentity();
-
-    //glTranslatef(sin(counter)/80, cos(counter)/80, 0.0); //movement
-
-    glColor3f(0.0, 0.5, 0.1);
-    /*
-        for (int i = 0;i < 360;i++) {
-            float degInRad = i*3.14159/180;
-            glColor3f(0.2, cos(degInRad), 0.2);
-            glVertex2f(cos(degInRad)*0.2, sin(degInRad)*0.2);
-        }
-    */
-    glBegin(GL_POLYGON);
-    circle(0, 0, 0.3, 0, 180);
-    circle(0, -0.3, 0.3, 180, 360);
-    glEnd();
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+    drawDragonHead();
     glutSwapBuffers();
 }
 
