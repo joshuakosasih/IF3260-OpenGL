@@ -182,12 +182,12 @@ void drawRightWing() {
     glBegin(GL_LINE_STRIP);
     circle(-0.39,0.055,0.78, 90, 180);
     glEnd();*/
-    glColor3fv(red);
     glBegin(GL_LINE_STRIP);
     circle(-0.06,0.65,0.28, 140, 245);
     glEnd();
 
-    glBegin(GL_LINE_STRIP);
+    glColor3fv(red);
+    glBegin(GL_POLYGON);
     circle(-0.22,0.055,0.78, 93, 178);
     glEnd();
 
@@ -195,32 +195,66 @@ void drawRightWing() {
     circle(-0.95,0.055,0.1, 40, 180);
     glEnd();
 
-    glBegin(GL_LINES);
+    glBegin(GL_POLYGON);
         glColor3fv(red);
-        glVertex2f(-0.872, 0.12);
+        glVertex2f(-0.9, 0.2);
         glVertex2f(-0.78, -0.2);
+        glVertex2f(-0.57, -0.13);
+        //glVertex2f(0.78, -0.2);
     glEnd();
 
-    glBegin(GL_LINE_STRIP);
-    circle(-0.68,-0.2,0.1, 40, 180);
+    glBegin(GL_POLYGON);
+    glColor3fv(black);
+    circle(-0.68,-0.2,0.1, 0, 360);
     glEnd();
 
-    glBegin(GL_LINES);
+    glBegin(GL_POLYGON);
         glColor3fv(red);
         glVertex2f(-0.60, -0.135);
+        glVertex2f(-0.38, -0.4);
+        glVertex2f(-0.8, 0.4);
         glVertex2f(-0.38, -0.4);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
+    glColor3fv(red);
     circle(0.42,0.2,1, 190, 215);
     glEnd();
 
+    glColor3fv(red);
     glBegin(GL_LINE_STRIP);
     circle(-0.54,-0.176,0.2, 30, 100);
     glEnd();
 
+    glColor3fv(red);
     glBegin(GL_LINE_STRIP);
     circle(-0.262,-0.074,0.1, 20, 180);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+        glColor3fv(red);
+        glVertex2f(-0.80, 0);
+        glVertex2f(-0.8, 0.4);
+        glVertex2f(0.8, 0.4);
+        glVertex2f(0.8, 0);
+    glEnd();
+
+
+    glBegin(GL_POLYGON);
+        glColor3fv(red);
+        glVertex2f(-0.9, 0.2);
+        glVertex2f(-0.8, 0.4);
+        glVertex2f(-0.3, 0.8);
+        glVertex2f(-0.55, -0.1);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+        glColor3fv(red);
+        glVertex2f(-0.35, 0.6);
+        glVertex2f(-0.8, 0.4);
+        glVertex2f(-0.35, -0.1);
+        glVertex2f(-0.35, -0.1);
+        glVertex2f(-0.2, 0.4);
     glEnd();
 
     /*glBegin(GL_LINE_STRIP);
@@ -277,7 +311,9 @@ void drawLeftWing() {
 
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
-    drawWingTry();
+    //drawWingTry();
+    drawLeftWing();
+    drawRightWing();
     drawDragonHead();
     drawDragonTail();
     glutSwapBuffers();
