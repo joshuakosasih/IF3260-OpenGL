@@ -57,10 +57,11 @@ void drawDragonTail() {
     glLineWidth(2.5);
     glBegin(GL_POLYGON);
         glColor3fv(red);
-        glVertex2f(-0.18, -0.02);
+        glVertex2f(-0.18, 0);
         glVertex2f(0, -0.7);
-        glVertex2f(0.05, -0.02);
+        glVertex2f(0.05, 0);
     glEnd();
+
 
     glBegin(GL_POLYGON);
         glColor3fv(red);
@@ -86,6 +87,13 @@ void drawDragonTail() {
         glVertex2f(0.11, -0.7);
         //floodfill(0,-0.23,red,red);
         glVertex2f(0.05, -0.02);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+        glColor3fv(red);
+        glVertex2f(0, 0);
+        glVertex2f(0.1, -0.1);
+        glVertex2f(0.2, 0);
     glEnd();
 }
 
@@ -235,8 +243,8 @@ void drawRightWing() {
         glColor3fv(red);
         glVertex2f(-0.80, 0);
         glVertex2f(-0.8, 0.4);
-        glVertex2f(0.8, 0.4);
-        glVertex2f(0.8, 0);
+        glVertex2f(0.75, 0.4);
+        glVertex2f(0.75, 0);
     glEnd();
 
 
@@ -257,6 +265,13 @@ void drawRightWing() {
         glVertex2f(-0.2, 0.4);
     glEnd();
 
+    glBegin(GL_POLYGON);
+        glColor3fv(red);
+        glVertex2f(-0.7, 0);
+        glVertex2f(-0.6, -0.1);
+        glVertex2f(-0.5, 0);
+    glEnd();
+
     /*glBegin(GL_LINE_STRIP);
     circle(-0.234,-0.070,0.058, 0, 160);
     glEnd();*/
@@ -268,7 +283,7 @@ void drawLeftWing() {
     circle(-0.0,0.65,0.28, -90, 42);
     glEnd();
 
-    glBegin(GL_LINE_STRIP);
+    glBegin(GL_POLYGON);
     circle(0.20,0.055,0.78, 0, 91);
     glEnd();
 
@@ -276,15 +291,26 @@ void drawLeftWing() {
     circle(0.89,0.055,0.1, 20, 140);
     glEnd();
 
-    glBegin(GL_LINES);
+    glBegin(GL_POLYGON);
         glColor3fv(red);
-        glVertex2f(0.812, 0.12);
+        glVertex2f(0.9, 0.4);
         glVertex2f(0.72, -0.2);
+        glVertex2f(0.712, 0.4);
     glEnd();
 
-    glBegin(GL_LINE_STRIP);
-    circle(0.62,-0.2,0.1, 0, 140);
+    glBegin(GL_POLYGON);
+        glColor3fv(red);
+        glVertex2f(0.85, 0.2);
+        glVertex2f(0.73, -0.2);
+        glVertex2f(0.52, -0.13);
+        //glVertex2f(0.78, -0.2);
     glEnd();
+
+    glColor3fv(black);
+    glBegin(GL_POLYGON);
+    circle(0.62,-0.2,0.1, 0, 360);
+    glEnd();
+
 
     glBegin(GL_LINES);
         glColor3fv(red);
@@ -296,8 +322,33 @@ void drawLeftWing() {
     circle(-0.48,0.2,1, 325, 351);
     glEnd();
 
+    glBegin(GL_POLYGON);
+        glColor3fv(red);
+        glVertex2f(0.54, -0.135);
+        glVertex2f(0.32, -0.4);
+        glVertex2f(0.74, 0.4);
+        glVertex2f(0.32, -0.4);
+    glEnd();
+
     glBegin(GL_LINE_STRIP);
     circle(0.48,-0.176,0.2, 80, 150);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+        glColor3fv(red);
+        glVertex2f(0.85, 0.2);
+        glVertex2f(0.75, 0.4);
+        glVertex2f(0.25, 0.8);
+        glVertex2f(0.50, -0.1);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+        glColor3fv(red);
+        glVertex2f(0.30, 0.6);
+        glVertex2f(0.75, 0.4);
+        glVertex2f(0.3, -0.1);
+        glVertex2f(0.3, -0.1);
+        glVertex2f(0.15, 0.4);
     glEnd();
 
     glBegin(GL_LINE_STRIP);
