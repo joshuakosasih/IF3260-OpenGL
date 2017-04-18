@@ -37,7 +37,7 @@ void CALLBACK tessVertexCB2(const GLvoid *data);
 void CALLBACK tessCombineCB(const GLdouble newVertex[3], const GLdouble *neighborVertex[4],
                             const GLfloat neighborWeight[4], GLdouble **outData);
 
-GLdouble quads[640][6];
+GLdouble quads[700][6];
 GLdouble vertices[64][6];
 int vertexIndex = 0;
 
@@ -268,16 +268,23 @@ void drawRainbow() {
     red = 1;
     green = 0;
     blue = 0;
-    QuadCircle(0, -0.5, 0.7, 20, 160, 0);
-    red = 0;
-    blue = 1;
-    QuadInverseCircle(0, -0.5, 0.6, 160, 20, 140);
+    QuadCircle(0, -0.5, 0.8, 20, 160, 0);
     red = 1;
+    green = 1;
+    QuadInverseCircle(0, -0.5, 0.75, 160, 20, 140);
     blue = 0;
-    QuadCircle(0, -0.5, 0.7, 20, 21, 280);
+    green = 1;
+    red = 0;
+    QuadCircle(0, -0.5, 0.7, 20, 160, 280);
+    blue = 1;
+    green = 0;
+    QuadInverseCircle(0, -0.5, 0.65, 160, 20, 420);
+    red = 1;
+    QuadCircle(0, -0.5, 0.6, 20, 160, 560);
+
 }
 
-void drawTess() {
+void drawTess(int x) {
     // create tessellator
     GLUtesselator *tess = gluNewTess();
 
@@ -297,16 +304,10 @@ void drawTess() {
     // describe non-convex polygon
     gluTessBeginPolygon(tess, NULL);
         // first contour
-        gluTessBeginContour(tess);
-            /*
-            gluTessVertex(tess, quad1[0], quad1[0]);
-            gluTessVertex(tess, quad1[1], quad1[1]);
-            gluTessVertex(tess, quad1[2], quad1[2]);
-            gluTessVertex(tess, quad1[3], quad1[3]);
-            */
 
-            for (int i = 0;i < 280;i++) {
-                cout << i << " ";
+        gluTessBeginContour(tess);
+            for (int i = x;i < (x+280);i++) {
+                //cout << i << " ";
                 gluTessVertex(tess, quads[i], quads[i]);
             }
         gluTessEndContour(tess);
@@ -324,8 +325,10 @@ void display() {
     drawDragonTail();
     drawRightWing();
     drawLeftWing();
-    drawRainbow();
-    drawTess();
+    drawTess(0);
+    drawTess(140);
+    drawTess(280);
+    drawTess(420);
     glutSwapBuffers();
 }
 
@@ -384,8 +387,8 @@ void CALLBACK tessVertexCB2(const GLvoid *data)
     glVertex3dv(ptr);
 
     // DEBUG //
-    cout << "  glColor3d(" << *(ptr+3) << ", " << *(ptr+4) << ", " << *(ptr+5) << ");\n";
-    cout << "  glVertex3d(" << *ptr << ", " << *(ptr+1) << ", " << *(ptr+2) << ");\n";
+    //cout << "  glColor3d(" << *(ptr+3) << ", " << *(ptr+4) << ", " << *(ptr+5) << ");\n";
+    //cout << "  glVertex3d(" << *ptr << ", " << *(ptr+1) << ", " << *(ptr+2) << ");\n";
 }
 void CALLBACK tessCombineCB(const GLdouble newVertex[3], const GLdouble *neighborVertex[4],
                             const GLfloat neighborWeight[4], GLdouble **outData)
